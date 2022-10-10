@@ -1,0 +1,133 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: #212121;
+}
+
+.game-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-container {
+    width: 500px;
+    border-bottom: 1px solid white;
+}
+
+.title-container h1 {
+    text-align: center;
+}
+
+.message-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-container p {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 150px;
+    padding: 1em;
+    position: absolute;
+    top: 30px;
+    border-radius: 5px;
+}
+
+.tile-container {
+    width: 330px;
+    margin: 30px 0;
+}
+
+.tile-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile-container .tile {
+    height: 55px;
+    width: 55px;
+    border: 2px solid rgb(106, 106, 106);
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile.grey-tile{
+    background-color: #3a3a3c;
+    border: none;
+}
+
+.tile.yellow-tile{
+    background-color: #b59f3a;
+    border: none;
+}
+
+.tile.green-tile {
+    background-color: #538d4e;
+    border: none;
+}
+
+.tile.flip{
+    animation: tileflip 0.5s linear;
+}
+
+@keyframes tileflip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.key-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.key-container button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 4px;
+    height: 58px;
+    width: 41px;
+    background-color: #504f4f;
+}
+
+.key-container button:nth-child(20),
+.key-container button:nth-child(28) {
+    width: 65px;
+}
+
+.key-container button:nth-child(11) {
+    margin-left: 30px;
+}
+
+.key-container button.grey-tile{
+    background-color: #3a3a3c;
+}
+
+.key-container button.yellow-tile{
+    background-color: #b59f3a;
+}
+
+.key-container button.green-tile{
+    background-color: #538d4e;
+}
